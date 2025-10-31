@@ -1,47 +1,99 @@
-body {
+* {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg,#002f73,#003d99,#004bbf);
+  color: #fff;
 }
 
 .container {
-  max-width: 700px;
-  margin: 40px auto;
-  background: white;
-  padding: 30px;
+  text-align: center;
+  padding: 25px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  width: 340px;
+}
+
+h1 {
+  margin-bottom: 15px;
+}
+
+.mode-btns {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.mode-btns button {
+  width: 48%;
+  padding: 10px;
+  border: none;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #234c8a;
+  color: white;
+}
+
+.mode-btns .active {
+  background: #ffc107;
+  color: #000;
+}
+
+#status {
+  margin: 10px 0 15px;
+  font-size: 18px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 8px;
+  margin: 15px auto;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(5px);
+  color: white;
+  font-size: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  font-weight: bold;
 }
 
-h1, h2 {
-  text-align: center;
+.cell:hover {
+  background: rgba(255,255,255,0.25);
 }
 
-#quiz-box {
-  margin-bottom: 20px;
+.win {
+  background: #00b74a !important; /* Green highlight */
 }
 
-.option {
-  margin-bottom: 10px;
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-  margin-right: 10px;
-}
-
-#controls {
-  text-align: center;
-}
-
-button {
-  padding: 10px 20px;
-  margin: 10px;
+#reset {
+  margin-top: 15px;
+  padding: 10px;
+  border: none;
+  background: #ff3b30;
+  color: white;
+  width: 100%;
   font-size: 16px;
+  border-radius: 8px;
   cursor: pointer;
 }
-
-#result-box {
-  text-align: center;
+#reset:hover {
+  background: #e62520;
 }
